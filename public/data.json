@@ -1,0 +1,68 @@
+[
+  {
+    "instrument": "guitar",
+    "image": "https://assets.yousician.com/app/uploads/2022/05/05125941/guitar-woman-956a7006-2048x1365.jpg.webp",
+    "students": 12,
+    "seats": 15,
+    "instructor": {
+      "name": "John Smith",
+      "email": "john@gmail.com",
+      "image": "https://www.americanacademy.de/wp-content/uploads/2019/02/Smith-John-E..jpg"
+    }
+  },
+  {
+    "instrument": "piano",
+    "image": "https://www.yamaha.com/en/musical_instrument_guide/common/images/piano/parts_viewer01.jpg",
+    "students": 8,
+    "seats": 10,
+    "instructor": {
+      "name": "Emily Johnson",
+      "email": "emily@gmail.com",
+      "image": "https://www.yamaha.com/us/pianos/images/New_Upright_Piano.jpg?1=1"
+    }
+  },
+  {
+    "instrument": "violin",
+    "image": "https://www.fiddleheads.com/pub/media/wysiwyg/Blog_Images/RIGHT_AND_LEFTY_SUN_VN-100--SHADOW_rectangle_crop_2.jpg",
+    "students": 6,
+    "seats": 8,
+    "instructor": {
+      "name": "Daniel Lee",
+      "email": "daniel@gmail.com",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Tenorviolin.jpg"
+    }
+  },
+  {
+    "instrument": "drum",
+    "image": "https://images-cdn.ubuy.co.in/633afeaef233af5c1006e5d7-drum-set-eastar-22-inch-for-adults-5.jpg",
+    "students": 4,
+    "seats": 6,
+    "instructor": {
+      "name": "Sarah Thompson",
+      "email": "sara@gmail.com",
+      "image": "https://m.media-amazon.com/images/M/MV5BMGRiYjFhZjctYTlhYy00NGI3LTk1MTctNDNhMDJhZDA4YTQ5XkEyXkFqcGdeQXVyMDMzOTYyMQ@@._V1_.jpg"
+    }
+  },
+  {
+    "instrument": "saxophone",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Yamaha_Saxophone_YTS-62.tif/lossy-page1-800px-Yamaha_Saxophone_YTS-62.tif.jpg",
+    "students": 5,
+    "seats": 7,
+    "instructor": {
+      "name": "Michael Brown",
+      "email": "brown@gmail.com",
+      "image": "https://images.squarespace-cdn.com/content/v1/56a61219a12f446a4536e5ab/6cea3a1e-4f3e-4a62-84e9-599f3074e203/Ne+Bankat+e+shkolles+moj+mike+%286%29.jpg"
+    }
+  },
+  {
+    "instrument": "flute",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Shinobue_and_other_flutes-3.jpg/800px-Shinobue_and_other_flutes-3.jpg",
+    "students": 3,
+    "seats": 5,
+    "instructor": {
+      "name": "Amy Wilson",
+      "email": "amy@gmail.com",
+      "image": "https://www.musicalhow.com/wp-content/uploads/Flute-Player.jpg"
+    }
+  }
+]

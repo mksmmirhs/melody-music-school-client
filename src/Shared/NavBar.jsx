@@ -63,8 +63,11 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menu}</ul>
         </div>
+
         <div className="navbar-end">
-          <a className="btn">Login</a>
+          <Link to="/login">
+            <a className="btn">Login</a>
+          </Link>
         </div>
       </div>
     </div>
