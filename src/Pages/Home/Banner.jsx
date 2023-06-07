@@ -5,22 +5,27 @@ import banner1 from '../../assets/Home/banner-1.jpg';
 import banner2 from '../../assets/Home/banner-2.jpg';
 import banner3 from '../../assets/Home/banner-3.webp';
 import banner4 from '../../assets/Home/banner-4.webp';
+import BannerHeader from './BannerHeader';
 
 const Banner = () => {
   return (
     <>
-      <div className="carousel w-full">
+      <div className="carousel w-full ">
         <div id="item1" className="carousel-item w-full">
           <img src={banner1} className="w-full" />
+          <BannerHeader></BannerHeader>
         </div>
         <div id="item2" className="carousel-item w-full">
           <img src={banner2} className="w-full" />
+          <BannerHeader></BannerHeader>
         </div>
         <div id="item3" className="carousel-item w-full">
           <img src={banner3} className="w-full" />
+          <BannerHeader></BannerHeader>
         </div>
         <div id="item4" className="carousel-item w-full">
           <img src={banner4} className="w-full" />
+          <BannerHeader></BannerHeader>
         </div>
       </div>
       <div className="flex justify-center w-full py-2 gap-2">
