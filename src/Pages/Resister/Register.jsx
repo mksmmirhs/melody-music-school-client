@@ -1,13 +1,32 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaEyeSlash } from 'react-icons/fa';
-import { useState } from 'react';
-const Login = () => {
-  const [passwordField, setPasswordField] = useState('password');
+
+const Register = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Name"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Image Url</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Image Url"
+                className="input input-bordered"
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -23,14 +42,20 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type={passwordField}
+                type="password"
                 placeholder="password"
                 className="input input-bordered"
               />
-              <FaEyeSlash
-                className="-mt-8 ms-[180px]"
-                onClick={() => setPasswordField('text')}
-              ></FaEyeSlash>
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Confirm Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="confirm password"
+                className="input input-bordered"
+              />
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary bg-[#68c4bc] border-0">
@@ -38,9 +63,9 @@ const Login = () => {
               </button>
             </div>
             <p>
-              New to site?{' '}
+              Already a user?{' '}
               <span className="text-[#68c4bc]">
-                <Link to="/register">Register</Link>
+                <Link to="/login">Login</Link>
               </span>
             </p>
           </div>
@@ -50,4 +75,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
