@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.webp';
+import useAuth from '../hooks/useAuth';
 
 const NavBar = () => {
+  const { user } = useAuth();
   const menu = (
     <>
       <li>
@@ -21,11 +23,15 @@ const NavBar = () => {
           Classes
         </Link>
       </li>
-      <li>
-        <Link to="/" className="text-2xl">
-          Dashboard
-        </Link>
-      </li>
+      {user ? (
+        <li>
+          <Link to="/" className="text-2xl">
+            Dashboard
+          </Link>
+        </li>
+      ) : (
+        ''
+      )}
     </>
   );
   return (
@@ -65,9 +71,17 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end">
-          <Link to="/login">
-            <button className="btn">Login</button>
-          </Link>
+          {user ? (
+            <div className="avatar">
+              <div className=" w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img title={user?.displayName} src={user.photoURL} />
+              </div>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
