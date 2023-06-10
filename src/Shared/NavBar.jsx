@@ -3,7 +3,7 @@ import logo from '../assets/logo.webp';
 import useAuth from '../hooks/useAuth';
 
 const NavBar = () => {
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
   const menu = (
     <>
       <li>
@@ -19,7 +19,7 @@ const NavBar = () => {
       </li>
 
       <li>
-        <Link to="/" className="text-2xl">
+        <Link to="classes" className="text-2xl">
           Classes
         </Link>
       </li>
@@ -29,6 +29,13 @@ const NavBar = () => {
             Dashboard
           </Link>
         </li>
+      ) : (
+        ''
+      )}
+      {user ? (
+        <button className="btn ms-4" onClick={() => logOut()}>
+          Logout
+        </button>
       ) : (
         ''
       )}

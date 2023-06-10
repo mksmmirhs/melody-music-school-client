@@ -4,6 +4,7 @@
     "image": "https://assets.yousician.com/app/uploads/2022/05/05125941/guitar-woman-956a7006-2048x1365.jpg.webp",
     "students": 12,
     "seats": 15,
+    "price": 150,
     "instructor": {
       "name": "John Smith",
       "email": "john@gmail.com",
@@ -15,6 +16,7 @@
     "image": "https://www.yamaha.com/en/musical_instrument_guide/common/images/piano/parts_viewer01.jpg",
     "students": 8,
     "seats": 10,
+    "price": 140,
     "instructor": {
       "name": "Emily Johnson",
       "email": "emily@gmail.com",
@@ -26,6 +28,7 @@
     "image": "https://www.fiddleheads.com/pub/media/wysiwyg/Blog_Images/RIGHT_AND_LEFTY_SUN_VN-100--SHADOW_rectangle_crop_2.jpg",
     "students": 6,
     "seats": 8,
+    "price": 120,
     "instructor": {
       "name": "Daniel Lee",
       "email": "daniel@gmail.com",
@@ -37,6 +40,7 @@
     "image": "https://images-cdn.ubuy.co.in/633afeaef233af5c1006e5d7-drum-set-eastar-22-inch-for-adults-5.jpg",
     "students": 4,
     "seats": 6,
+    "price": 170,
     "instructor": {
       "name": "Sarah Thompson",
       "email": "sara@gmail.com",
@@ -48,6 +52,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Yamaha_Saxophone_YTS-62.tif/lossy-page1-800px-Yamaha_Saxophone_YTS-62.tif.jpg",
     "students": 5,
     "seats": 7,
+    "price": 180,
     "instructor": {
       "name": "Michael Brown",
       "email": "brown@gmail.com",
@@ -59,6 +64,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Shinobue_and_other_flutes-3.jpg/800px-Shinobue_and_other_flutes-3.jpg",
     "students": 3,
     "seats": 5,
+    "price": 150,
     "instructor": {
       "name": "Amy Wilson",
       "email": "amy@gmail.com",

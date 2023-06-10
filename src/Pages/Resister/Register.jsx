@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import SocialLogin from '../../Shared/SocialLogin';
 
 const Register = () => {
   const {
@@ -10,18 +12,43 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
 
-  const { createUser } = useAuth();
+  const { createUser, updateUserProfile } = useAuth();
 
   const onSubmit = data => {
-    createUser(data.email, data.password)
-      .then(createdUser => {
-        console.log(createUser.user);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    console.log(data);
+    createUser(data.email, data.password).then(createdUser => {
+      console.log(createUser.user);
+      updateUserProfile(data.name, data.imageUrl)
+        .then(() => {
+          const saveUser = {
+            name: data.name,
+            email: data.email,
+            image: data.imageUrl,
+          };
+          fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then(res => res.json())
+            .then(data => {
+              if (data.insertedId) {
+                reset();
+                Swal.fire({
+                  icon: 'success',
+                  title: 'User created successfully.',
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate('/');
+              }
+            });
+        })
+        .catch(error => console.log(error));
+    });
   };
 
   return (
@@ -116,7 +143,7 @@ const Register = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary bg-[#68c4bc] border-0">
-                Login
+                Register
               </button>
             </div>
             <p>
@@ -126,6 +153,7 @@ const Register = () => {
               </span>
             </p>
           </form>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
