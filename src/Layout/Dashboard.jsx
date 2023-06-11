@@ -11,13 +11,15 @@ import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import useCart from '../hooks/useCart';
 import { useEffect, useState } from 'react';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
   const { user } = useAuth();
   const [cart] = useCart();
   const [dNavbar, setDNavbar] = useState(<></>);
   //TODO: fetch admin from db
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin);
   const isInstructor = false;
 
   useEffect(() => {
