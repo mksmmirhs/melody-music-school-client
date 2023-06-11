@@ -8,6 +8,7 @@ import Dashboard from '../Layout/Dashboard';
 import MyCart from '../Pages/Dashboard/MyCart';
 import PrivateRoute from './PrivateRoute';
 import ManageUsers from '../Pages/Dashboard/ManageUsers/ManageUsers';
+import Instructors from '../Pages/Instructors/Instructors';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'classes',
         element: <Classes></Classes>,
+      },
+      {
+        path: 'instructors',
+        element: <Instructors></Instructors>,
       },
     ],
   },

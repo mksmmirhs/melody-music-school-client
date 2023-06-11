@@ -34,10 +34,23 @@ const Dashboard = () => {
               <FaUserAlt></FaUserAlt> Manage Users
             </Link>
           </li>
+          <li>
+            <Link to="/">
+              <FaHome></FaHome> Home
+            </Link>
+          </li>
         </>
       );
     } else if (isInstructor) {
-      setDNavbar(<></>);
+      setDNavbar(
+        <>
+          <li>
+            <Link to="/">
+              <FaHome></FaHome> Home
+            </Link>
+          </li>
+        </>
+      );
     } else {
       setDNavbar(
         <>
