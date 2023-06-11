@@ -8,14 +8,17 @@ import {
 } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import useCart from '../hooks/useCart';
 
 const Dashboard = () => {
   const { user } = useAuth();
+  const [cart] = useCart();
   const dNavbar = (
     <>
       <li>
         <Link to="/dashboard/mycart">
           <FaShoppingCart></FaShoppingCart>My Cart
+          <span className="badge badge-secondary">+{cart?.length || 0}</span>
         </Link>
       </li>
       <li>

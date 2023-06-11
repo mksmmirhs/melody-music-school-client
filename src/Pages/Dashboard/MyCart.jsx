@@ -1,8 +1,33 @@
 import { FaTrashAlt } from 'react-icons/fa';
 import useCart from '../../hooks/useCart';
+import Swal from 'sweetalert2';
 
 const MyCart = () => {
   const [cart, refetch] = useCart();
+  const handleDelete = id => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${id}`, {
+          method: 'DELETE',
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.deletedCount > 0) {
+              Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+              refetch();
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       <div className="overflow-x-auto">
@@ -39,7 +64,10 @@ const MyCart = () => {
                 </td>
                 <td>${item.price}</td>
                 <td>
-                  <button className="btn">
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="btn"
+                  >
                     <FaTrashAlt></FaTrashAlt>
                   </button>
                 </td>
