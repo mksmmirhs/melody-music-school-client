@@ -1,5 +1,6 @@
 import {
   FaBook,
+  FaFolderPlus,
   FaHome,
   FaSchool,
   FaShopify,
@@ -12,6 +13,7 @@ import useAuth from '../hooks/useAuth';
 import useCart from '../hooks/useCart';
 import { useEffect, useState } from 'react';
 import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -19,8 +21,8 @@ const Dashboard = () => {
   const [dNavbar, setDNavbar] = useState(<></>);
   //TODO: fetch admin from db
   const [isAdmin] = useAdmin();
-  console.log(isAdmin);
-  const isInstructor = false;
+
+  const [isInstructor] = useInstructor();
 
   useEffect(() => {
     if (isAdmin) {
@@ -46,6 +48,11 @@ const Dashboard = () => {
     } else if (isInstructor) {
       setDNavbar(
         <>
+          <li>
+            <Link to="/dashboard/addclass">
+              <FaFolderPlus></FaFolderPlus> Add a Class
+            </Link>
+          </li>
           <li>
             <Link to="/">
               <FaHome></FaHome> Home

@@ -9,6 +9,7 @@ import MyCart from '../Pages/Dashboard/MyCart';
 import PrivateRoute from './PrivateRoute';
 import ManageUsers from '../Pages/Dashboard/ManageUsers/ManageUsers';
 import Instructors from '../Pages/Instructors/Instructors';
+import AddClass from '../Pages/Dashboard/AddClass/AddClass';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: 'manageusers',
         element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: 'addclass',
+        element: <AddClass></AddClass>,
       },
     ],
   },
