@@ -1,48 +1,79 @@
-import React from 'react';
 import {
+  FaBook,
   FaHome,
   FaSchool,
   FaShopify,
   FaShoppingCart,
+  FaUserAlt,
   FaWallet,
 } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import useCart from '../hooks/useCart';
+import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
   const { user } = useAuth();
   const [cart] = useCart();
-  const dNavbar = (
-    <>
-      <li>
-        <Link to="/dashboard/mycart">
-          <FaShoppingCart></FaShoppingCart>My Cart
-          <span className="badge badge-secondary">+{cart?.length || 0}</span>
-        </Link>
-      </li>
-      <li>
-        <Link>
-          <FaWallet></FaWallet>Payment history
-        </Link>
-      </li>
-      <li>
-        <Link>
-          <FaSchool></FaSchool> Selected Classes
-        </Link>
-      </li>
-      <li>
-        <Link>
-          <FaShopify></FaShopify> Enrolled Classes
-        </Link>
-      </li>
-      <li>
-        <Link to="/">
-          <FaHome></FaHome> Home
-        </Link>
-      </li>
-    </>
-  );
+  const [dNavbar, setDNavbar] = useState(<></>);
+  //TODO: fetch admin from db
+  const isAdmin = true;
+  const isInstructor = false;
+
+  useEffect(() => {
+    if (isAdmin) {
+      setDNavbar(
+        <>
+          <li>
+            <Link>
+              <FaBook></FaBook> Manage Classes
+            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard/manageusers">
+              <FaUserAlt></FaUserAlt> Manage Users
+            </Link>
+          </li>
+        </>
+      );
+    } else if (isInstructor) {
+      setDNavbar(<></>);
+    } else {
+      setDNavbar(
+        <>
+          <li>
+            <Link to="/dashboard/mycart">
+              <FaShoppingCart></FaShoppingCart>My Cart
+              <span className="badge badge-secondary">
+                +{cart?.length || 0}
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <FaWallet></FaWallet>Payment history
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <FaSchool></FaSchool> Selected Classes
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <FaShopify></FaShopify> Enrolled Classes
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <FaHome></FaHome> Home
+            </Link>
+          </li>
+        </>
+      );
+    }
+  }, [isAdmin, isInstructor, cart?.length]);
+
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
