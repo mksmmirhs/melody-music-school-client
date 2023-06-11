@@ -4,6 +4,8 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Resister/Register';
 import Classes from '../Pages/Classes/Classes';
+import Dashboard from '../Layout/Dashboard';
+import MyCart from '../Pages/Dashboard/MyCart';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -24,6 +26,16 @@ const router = createBrowserRouter([
       {
         path: 'classes',
         element: <Classes></Classes>,
+      },
+    ],
+  },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: 'mycart',
+        element: <MyCart></MyCart>,
       },
     ],
   },
