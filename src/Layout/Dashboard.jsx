@@ -30,7 +30,7 @@ const Dashboard = () => {
       setDNavbar(
         <>
           <li>
-            <Link>
+            <Link to="/dashboard/manageclasses">
               <FaBook></FaBook> Manage Classes
             </Link>
           </li>

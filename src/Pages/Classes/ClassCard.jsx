@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useInstructor from '../../hooks/useInstructor';
+import useAdmin from '../../hooks/useAdmin';
 
 const ClassCard = ({ course }) => {
   const [btnState, setBtnState] = useState(false);
@@ -9,14 +11,18 @@ const ClassCard = ({ course }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isInstructor] = useInstructor();
+  const [isAdmin] = useAdmin();
   const { _id, instrument, image, students, seats, price, instructor } = course;
 
   useEffect(() => {
     if (course.seats - course.students === 0) {
       setBtnState(true);
       setBgColour('bg-red-100');
+    } else if (isAdmin || isInstructor) {
+      setBtnState(true);
     }
-  }, []);
+  }, [course.seats, course.students, isAdmin, isInstructor]);
 
   const handleAddToCart = () => {
     const cartItem = {
