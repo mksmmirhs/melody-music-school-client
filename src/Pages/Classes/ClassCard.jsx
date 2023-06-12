@@ -30,7 +30,7 @@ const ClassCard = ({ course }) => {
       instrument,
       image,
       price,
-      email: user.email,
+      email: user?.email,
     };
     if (user) {
       fetch('https://melody-music-school-server.vercel.app/carts', {
