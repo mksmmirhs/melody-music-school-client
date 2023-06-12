@@ -4,7 +4,7 @@ import useAuth from './useAuth';
 const useAdmin = () => {
   const { user } = useAuth();
   const { data: isAdmin, isLoading } = useQuery({
-    queryKey: ['isAdmin', user.email],
+    queryKey: ['isAdmin', user?.email],
     queryFn: async () => {
       const res = await fetch(
         `https://melody-music-school-server.vercel.app/users/admin/${user?.email}`
