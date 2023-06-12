@@ -5,7 +5,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Resister/Register';
 import Classes from '../Pages/Classes/Classes';
 import Dashboard from '../Layout/Dashboard';
-import MyCart from '../Pages/Dashboard/MyCart';
+import SelectedClasses from '../Pages/Dashboard/SelectedClasses/SelectedClasses';
 import PrivateRoute from './PrivateRoute';
 import ManageUsers from '../Pages/Dashboard/ManageUsers/ManageUsers';
 import Instructors from '../Pages/Instructors/Instructors';
@@ -15,6 +15,7 @@ import UserHome from '../Pages/Dashboard/UserHome/UserHome';
 import AdminRoute from './AdminRoute';
 import InstructorRoute from './InstructorRoute';
 import ManageClasses from '../Pages/Dashboard/ManageClasses/ManageClasses';
+import FeedBack from '../Pages/Dashboard/FeedBack/FeedBack';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -55,8 +56,8 @@ const router = createBrowserRouter([
         element: <UserHome></UserHome>,
       },
       {
-        path: 'mycart',
-        element: <MyCart></MyCart>,
+        path: 'selectedclasses',
+        element: <SelectedClasses></SelectedClasses>,
       },
       {
         path: 'manageusers',
@@ -71,6 +72,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <ManageClasses></ManageClasses>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'feedback/:id',
+        element: (
+          <AdminRoute>
+            <FeedBack></FeedBack>
           </AdminRoute>
         ),
       },

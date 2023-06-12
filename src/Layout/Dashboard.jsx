@@ -70,8 +70,8 @@ const Dashboard = () => {
       setDNavbar(
         <>
           <li>
-            <Link to="/dashboard/mycart">
-              <FaShoppingCart></FaShoppingCart>My Cart
+            <Link to="/dashboard/selectedclasses">
+              <FaSchool></FaSchool> Selected Classes
               <span className="badge badge-secondary">
                 +{cart?.length || 0}
               </span>
@@ -80,11 +80,6 @@ const Dashboard = () => {
           <li>
             <Link>
               <FaWallet></FaWallet>Payment history
-            </Link>
-          </li>
-          <li>
-            <Link>
-              <FaSchool></FaSchool> Selected Classes
             </Link>
           </li>
           <li>

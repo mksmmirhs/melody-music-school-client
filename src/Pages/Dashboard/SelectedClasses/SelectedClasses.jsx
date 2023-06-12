@@ -1,8 +1,9 @@
 import { FaTrashAlt } from 'react-icons/fa';
-import useCart from '../../hooks/useCart';
-import Swal from 'sweetalert2';
 
-const MyCart = () => {
+import Swal from 'sweetalert2';
+import useCart from '../../../hooks/useCart';
+
+const SelectedClasses = () => {
   const [cart, refetch] = useCart();
   const handleDelete = id => {
     Swal.fire({
@@ -83,4 +84,4 @@ const MyCart = () => {
   );
 };
 
-export default MyCart;
+export default SelectedClasses;

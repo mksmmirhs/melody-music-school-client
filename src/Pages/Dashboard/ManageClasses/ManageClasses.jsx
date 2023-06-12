@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useClasses from '../../../hooks/useClasses';
 
 const ManageClasses = () => {
@@ -89,7 +90,11 @@ const ManageClasses = () => {
                     Deny
                   </button>
                 </td>
-                <td></td>
+                <td>
+                  <Link to={`/dashboard/feedback/${cls._id}`}>
+                    <button className="btn">Feedback</button>
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>
