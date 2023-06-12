@@ -3,7 +3,7 @@ import useAuth from './useAuth';
 
 const useInstructor = () => {
   const { user } = useAuth();
-  const { data: isInstructor } = useQuery({
+  const { data: isInstructor, isLoading } = useQuery({
     queryKey: ['isInstructor', user.email],
     queryFn: async () => {
       const res = await fetch(
@@ -13,7 +13,7 @@ const useInstructor = () => {
       return res.json();
     },
   });
-  return [isInstructor?.instructor];
+  return [isInstructor?.instructor, isLoading];
 };
 
 export default useInstructor;

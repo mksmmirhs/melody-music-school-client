@@ -10,6 +10,8 @@ import PrivateRoute from './PrivateRoute';
 import ManageUsers from '../Pages/Dashboard/ManageUsers/ManageUsers';
 import Instructors from '../Pages/Instructors/Instructors';
 import AddClass from '../Pages/Dashboard/AddClass/AddClass';
+import MyClasses from '../Pages/Dashboard/MyClasses/MyClasses';
+import UserHome from '../Pages/Dashboard/UserHome/UserHome';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -38,13 +40,17 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: 'dashboard',
+    path: '/dashboard',
     element: (
       <PrivateRoute>
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
     children: [
+      {
+        path: '/dashboard',
+        element: <UserHome></UserHome>,
+      },
       {
         path: 'mycart',
         element: <MyCart></MyCart>,
@@ -56,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: 'addclass',
         element: <AddClass></AddClass>,
+      },
+      {
+        path: 'myclasses',
+        element: <MyClasses></MyClasses>,
       },
     ],
   },

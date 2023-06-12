@@ -3,7 +3,7 @@ import useAuth from './useAuth';
 
 const useAdmin = () => {
   const { user } = useAuth();
-  const { data: isAdmin } = useQuery({
+  const { data: isAdmin, isLoading } = useQuery({
     queryKey: ['isAdmin', user.email],
     queryFn: async () => {
       const res = await fetch(
@@ -13,7 +13,7 @@ const useAdmin = () => {
       return res.json();
     },
   });
-  return [isAdmin?.admin];
+  return [isAdmin?.admin, isLoading];
 };
 
 export default useAdmin;

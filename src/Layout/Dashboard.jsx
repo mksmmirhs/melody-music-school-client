@@ -1,6 +1,7 @@
 import {
   FaBook,
   FaFolderPlus,
+  FaGuitar,
   FaHome,
   FaSchool,
   FaShopify,
@@ -20,9 +21,9 @@ const Dashboard = () => {
   const [cart] = useCart();
   const [dNavbar, setDNavbar] = useState(<></>);
   //TODO: fetch admin from db
-  const [isAdmin] = useAdmin();
+  const [isAdmin, loadingAdmin] = useAdmin();
 
-  const [isInstructor] = useInstructor();
+  const [isInstructor, loadingInstructor] = useInstructor();
 
   useEffect(() => {
     if (isAdmin) {
@@ -54,13 +55,18 @@ const Dashboard = () => {
             </Link>
           </li>
           <li>
+            <Link to="/dashboard/myclasses">
+              <FaGuitar></FaGuitar> My Classes
+            </Link>
+          </li>
+          <li>
             <Link to="/">
               <FaHome></FaHome> Home
             </Link>
           </li>
         </>
       );
-    } else {
+    } else if (!loadingAdmin || !loadingInstructor) {
       setDNavbar(
         <>
           <li>
