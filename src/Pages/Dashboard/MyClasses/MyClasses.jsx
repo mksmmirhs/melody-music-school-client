@@ -6,7 +6,9 @@ const MyClasses = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myclasses?email=${user.email}`)
+    fetch(
+      `https://melody-music-school-server.vercel.app/myclasses?email=${user.email}`
+    )
       .then(res => res.json())
       .then(data => {
         setMyClasses(data);

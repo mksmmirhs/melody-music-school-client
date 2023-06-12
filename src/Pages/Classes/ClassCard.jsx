@@ -33,7 +33,7 @@ const ClassCard = ({ course }) => {
       email: user.email,
     };
     if (user) {
-      fetch('http://localhost:5000/carts', {
+      fetch('https://melody-music-school-server.vercel.app/carts', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',

@@ -2,6 +2,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 import Swal from 'sweetalert2';
 import useCart from '../../../hooks/useCart';
+import { Link } from 'react-router-dom';
 
 const SelectedClasses = () => {
   const [cart, refetch] = useCart();
@@ -16,7 +17,7 @@ const SelectedClasses = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${id}`, {
+        fetch(`https://melody-music-school-server.vercel.app/carts/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())
@@ -72,9 +73,11 @@ const SelectedClasses = () => {
                     <FaTrashAlt></FaTrashAlt>
                   </button>
                 </td>
-                <th>
-                  <button className="btn btn-xs">Pay</button>
-                </th>
+                <td>
+                  <Link to={`/dashboard/payment/${item._id}`}>
+                    <button className="btn btn-xs">Pay</button>
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>

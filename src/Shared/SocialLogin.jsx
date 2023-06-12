@@ -14,7 +14,7 @@ const SocialLogin = () => {
           image: user.photoURL,
         };
         console.log(saveUser);
-        fetch('http://localhost:5000/users', {
+        fetch('https://melody-music-school-server.vercel.app/users', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

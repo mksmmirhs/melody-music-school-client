@@ -4,7 +4,9 @@ const useClasses = () => {
     queryKey: ['allClasses'],
 
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/allclasses');
+      const res = await fetch(
+        'https://melody-music-school-server.vercel.app/allclasses'
+      );
       return res.json();
     },
   });

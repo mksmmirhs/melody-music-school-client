@@ -28,7 +28,7 @@ const AddClass = () => {
         email: user.email,
       },
     };
-    fetch('http://localhost:5000/courses', {
+    fetch('https://melody-music-school-server.vercel.app/courses', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

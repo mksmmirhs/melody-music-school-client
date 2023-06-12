@@ -8,7 +8,7 @@ const useCart = () => {
 
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/carts?email=${user?.email}`
+        `https://melody-music-school-server.vercel.app/carts?email=${user?.email}`
       );
       return res.json();
     },

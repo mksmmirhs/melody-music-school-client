@@ -9,13 +9,16 @@ const FeedBack = () => {
     const feedback = event.target.feedback.value;
     const data = { feedback };
     console.log(data);
-    fetch(`http://localhost:5000/classes/feedback/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://melody-music-school-server.vercel.app/classes/feedback/${id}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then(res => res.json())
       .then(result => {
         if (result.modifiedCount > 0) {

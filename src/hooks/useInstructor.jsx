@@ -7,7 +7,7 @@ const useInstructor = () => {
     queryKey: ['isInstructor', user.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/users/instructor/${user?.email}`
+        `https://melody-music-school-server.vercel.app/users/instructor/${user?.email}`
       );
 
       return res.json();

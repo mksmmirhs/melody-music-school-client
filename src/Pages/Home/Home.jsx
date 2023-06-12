@@ -5,7 +5,7 @@ import Banner from './Banner';
 const Home = () => {
   const [popularClass, setPopularClass] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/courses')
+    fetch('https://melody-music-school-server.vercel.app/courses')
       .then(res => res.json())
       .then(data => setPopularClass(data));
   }, []);

@@ -5,7 +5,9 @@ const UserHome = () => {
   const [profile, setProfile] = useState({});
   const { user } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:5000/users/profile?email=${user?.email}`)
+    fetch(
+      `https://melody-music-school-server.vercel.app/users/profile?email=${user?.email}`
+    )
       .then(res => res.json())
       .then(data => {
         setProfile(data);

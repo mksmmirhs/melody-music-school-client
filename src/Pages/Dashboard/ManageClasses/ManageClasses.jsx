@@ -5,9 +5,12 @@ const ManageClasses = () => {
   const [allClasses, refetch] = useClasses();
 
   const handleApprove = id => {
-    fetch(`http://localhost:5000/classes/approve/${id}`, {
-      method: 'PATCH',
-    })
+    fetch(
+      `https://melody-music-school-server.vercel.app/classes/approve/${id}`,
+      {
+        method: 'PATCH',
+      }
+    )
       .then(res => res.json())
       .then(data => {
         if (data.modifiedCount > 0) {
@@ -17,7 +20,7 @@ const ManageClasses = () => {
   };
 
   const handleDeny = id => {
-    fetch(`http://localhost:5000/classes/deny/${id}`, {
+    fetch(`https://melody-music-school-server.vercel.app/classes/deny/${id}`, {
       method: 'PATCH',
     })
       .then(res => res.json())
